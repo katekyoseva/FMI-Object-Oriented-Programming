@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 const unsigned MAX_YEAR = 4095;
-// objects -> in func - const ref
 
 // Task 1
 bool isEven(int num)
