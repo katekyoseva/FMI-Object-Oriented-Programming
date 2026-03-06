@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 const unsigned MAX_YEAR = 4095;
+const unsigned MAX_LENGTH = 256;
 
 // Task 1
 bool isEven(int num)
@@ -175,6 +176,7 @@ struct Date
 	unsigned month : 4;
 	unsigned year : 12; 
 };
+
 bool isLeapYear(unsigned year)
 {
 	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
@@ -304,13 +306,18 @@ struct Game
 void readGame(Game& game)
 {
 	std::cin.ignore();
-	char buffer[256];
+	char buffer[MAX_LENGTH];
 	std::cout << "Enter game name: ";
-	std::cin.getline(buffer, 256);
+	std::cin.getline(buffer, MAX_LENGTH);
 
 	int length = stringLength(buffer);
 
-	game.name = new char[length + 1];
+	game.name = new (std::nothrow) char[length + 1] {};
+	if (!game.name)
+	{
+		return;
+	}
+
 	stringCopy(game.name, buffer);
 
 	std::cout << "Enter release date:\n";
