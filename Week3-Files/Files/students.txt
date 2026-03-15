@@ -1,0 +1,3 @@
+Ivan 1 3.5
+Maria 2 4.8
+Georgi 3 5.6

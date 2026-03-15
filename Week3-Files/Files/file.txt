@@ -1,0 +1,3 @@
+I like programming
+C++ is powerful
+Programming is fun

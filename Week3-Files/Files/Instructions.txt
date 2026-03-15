@@ -1,0 +1,1 @@
+For the "Solutions.cpp" file to work, move all files from this folder to the direct "Source Files" folder. They have been moved in "Files" for readability in GitHub.
